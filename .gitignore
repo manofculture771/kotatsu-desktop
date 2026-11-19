@@ -1,0 +1,9 @@
+build/
+.gradle/
+tools/
+brave-profile/
+data/*
+!data/enabled-sources.json
+*.log
+__pycache__/
+*.pyc

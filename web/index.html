@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b0e">
+<title>Kotatsu Desktop</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+<div id="app">
+  <aside id="sidebar">
+    <a class="brand" href="#/">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" rx="9" fill="currentColor"/>
+        <path d="M9 22V10.5l4.4 4.2L17 8l3.6 6.7 4.4-4.2V22" fill="none" stroke="#0b0b0e" stroke-width="2.1" stroke-linejoin="round" stroke-linecap="round"/>
+        <circle cx="13" cy="18.2" r="1.25" fill="#0b0b0e"/>
+        <circle cx="21" cy="18.2" r="1.25" fill="#0b0b0e"/>
+      </svg>
+      <span class="brand-text"><strong>Kotatsu</strong><em>desktop</em></span>
+    </a>
+
+    <nav class="nav">
+      <a href="#/" data-nav="home"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/></svg><span>Home</span></a>
+      <a href="#/library" data-nav="library"><svg viewBox="0 0 24 24"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1z"/></svg><span>Library</span></a>
+      <a href="#/history" data-nav="history"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span>History</span></a>
+    </nav>
+
+    <div class="side-block">
+      <div class="side-label">Sources <span id="source-count" class="count">—</span></div>
+      <button class="source-pick" id="pick-source">
+        <span class="dot"></span>
+        <span id="active-source">MangaDex</span>
+        <svg viewBox="0 0 24 24" class="chev"><path d="m8 10 4 4 4-4"/></svg>
+      </button>
+    </div>
+
+    <div class="side-foot">
+      <div id="server-state" class="server-state"><i></i> connecting</div>
+      <div class="fineprint">Parsers from Kotatsu-Redo</div>
+    </div>
+  </aside>
+
+  <main id="main">
+    <header id="topbar">
+      <form id="search-form" autocomplete="off">
+        <svg viewBox="0 0 24 24" class="search-icon"><circle cx="11" cy="11" r="7"/><path d="m16.5 16.5 4 4"/></svg>
+        <input id="search-input" type="search" placeholder="Search manga, author, genre…" spellcheck="false">
+        <kbd>↵</kbd>
+      </form>
+      <div class="top-actions">
+        <button id="open-random" title="Random pick from this source">Shuffle</button>
+      </div>
+    </header>
+    <div id="view" aria-live="polite"></div>
+  </main>
+</div>
+
+<div id="toast" role="status"></div>
+<div id="overlay" hidden></div>
+<script src="app.js?v=5"></script>
+</body>
+</html>
